@@ -198,7 +198,7 @@ class App {
     console.log(workout);
     console.log(this);
     let html = `
-      <li class="workout workout--${workout.type}" data-id="1234567890">
+      <li class="workout workout--${workout.type}" data-id="${workout.id}">
         <h2 class="workout__title">${workout.description}</h2>
         <div class="workout__details">
           <span class="workout__icon">${workout.type === 'running' ? '🏃‍♀️' : '🚴‍♀️'}</span>
