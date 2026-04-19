@@ -84,10 +84,41 @@ a:visited {
   border-left: 5px solid var(--color-brand--1);
 }
 
+.workout__info {
+  grid-column: 1 / -1;
+
+  display: flex;
+  justify-content: space-between;
+}
+
 .workout__title {
   font-size: 1.7rem;
   font-weight: 600;
-  grid-column: 1 / -1;
+}
+
+.workout__btn {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.workout__btn:hover {
+  opacity: 0.7;
+}
+
+.workouts__delete-all {
+  background-color: transparent;
+  color: inherit;
+  border: none;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  align-self: center;
+}
+.workouts__delete-all:hover {
+  opacity: 0.7;
 }
 
 .workout__details {
@@ -125,7 +156,9 @@ a:visited {
 
   /* Match height and activity boxes */
   height: 9.25rem;
-  transition: all 0.5s, transform 1ms;
+  transition:
+    all 0.5s,
+    transform 1ms;
 }
 
 .form.hidden {
