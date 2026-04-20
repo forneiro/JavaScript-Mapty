@@ -29,12 +29,31 @@
     <title>mapty // Map your workouts</title>
   </head>
   <body>
+    <div class="overlay none">
+      <div class="error-popup">
+        <h3 class="error-popup__title">Error! ⚠️</h3>
+        <p class="error-popup__message"></p>
+        <button class="error-popup__btn">Ok</button>
+      </div>
+    </div>
     <div class="sidebar">
       <img src="logo.png" alt="Logo" class="logo" />
 
       <button class="workouts__delete-all" id="delete-all">
         Eliminar todos los workouts
       </button>
+
+      <div class="sidebar__order">
+        <p for="order">Ordenar por:</p>
+        <select name="order" id="input--order">
+          <option value="default">Default</option>
+          <option value="distance">Distance</option>
+          <option value="duration">Duration</option>
+          <option value="cadence">Cadence</option>
+          <option value="speed">Speed</option>
+        </select>
+      </div>
+
       <ul class="workouts">
         <form class="form hidden">
           <div class="form__row">

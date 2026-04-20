@@ -1,12 +1,16 @@
 :root {
+  --color-black: #000;
+  --color-overlay: rgb(0, 0, 0, 0.7);
   --color-brand--1: #ffb545;
   --color-brand--2: #00c46a;
+  --color-brand--3: #a0ac39;
 
   --color-dark--1: #2d3439;
   --color-dark--2: #42484d;
   --color-light--1: #aaa;
   --color-light--2: #ececec;
   --color-light--3: rgb(214, 222, 224);
+  --color-light--4: #cccccc;
 }
 
 * {
@@ -41,12 +45,90 @@ a:visited {
 }
 
 /* SIDEBAR */
+.none {
+  display: none;
+}
+
+.overlay {
+  background-color: var(--color-overlay);
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  z-index: 50;
+}
+
+.error-popup {
+  position: fixed;
+  z-index: 100;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--color-light--2);
+  color: var(--color-dark--1);
+  padding: 1rem 2rem;
+  border-radius: 0.4rem;
+}
+
+.error-popup__message {
+  font-size: 1.6rem;
+}
+
+.error-popup__title {
+  font-size: 2.6rem;
+}
+
+.error-popup__btn {
+  background-color: transparent;
+  border: none;
+  margin-top: 2rem;
+  cursor: pointer;
+  border: 1px solid var(--color-black);
+  padding: 0.6rem 1.8rem;
+  transition: 0.3s ease-out;
+}
+
+.error-popup__btn:hover {
+  background-color: var(--color-light--4);
+}
+
 .sidebar {
   flex-basis: 50rem;
   background-color: var(--color-dark--1);
   padding: 3rem 5rem 4rem 5rem;
   display: flex;
   flex-direction: column;
+}
+
+.sidebar__order {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar__order p {
+  font-size: 1.8rem;
+}
+
+.sidebar__order select {
+  font-size: 1.4rem;
+  background-color: transparent;
+  color: inherit;
+  padding: 0.6rem 2rem;
+}
+
+.sidebar__order select::after {
+  content: 'hoa';
+}
+
+.sidebar__order select:focus {
+  outline: none;
+}
+
+.sidebar__order option {
+  color: var(--color-black);
 }
 
 .logo {
@@ -227,6 +309,8 @@ a:visited {
   flex: 1;
   height: 100%;
   background-color: var(--color-light--1);
+
+  z-index: 10;
 }
 
 /* Popup width is defined in JS using options */
